@@ -1,0 +1,29 @@
+#!/usr/bin/env sh
+set -x
+. "$(dirname -- "$0")/_/husky.sh"
+
+echo "Running pre-push..."
+
+# Formatting (does not block push)
+npm run format || echo "Prettier made changes, commit them if needed."
+
+# ESLint: block only on errors
+npm run lint || {
+  echo "ESLint errors found. Push aborted."
+  exit 1
+}
+
+# TypeScript: block on errors
+npm run ts || {
+  echo "TypeScript errors found. Push aborted."
+  exit 1
+}
+
+# Check for unused CSS: block if detected
+npm run check-unused-css || {
+  echo "Unused CSS found. Push aborted."
+  exit 1
+}
+
+echo "Pre-push checks passed."
+exit 0
