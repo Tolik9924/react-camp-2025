@@ -1,73 +1,41 @@
-# React + TypeScript + Vite
+# 🏫 React Code Camp 2025
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 💡 Description
 
-Currently, two official plugins are available:
+This project was created to help trainees gain practical coding skills in JavaScript, HTML and CSS. The course's main goal is for students to learn how to work in a team and master the basic principles of collaborative development and code versioning. After completing the course, students will be able to create their own web applications using React and work confidently on real projects.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## ✨ Functionality
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- ⚡ Quick start з Vite + TypeScript
+- 🎨 Ready ESLint + Prettier + Husky + lint-staged
+- 📦 Support CSS Modules / TailwindCSS
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🛠️ Installation
 
-```js
-export default defineConfig([
-	globalIgnores(['dist']),
-	{
-		files: ['**/*.{ts,tsx}'],
-		extends: [
-			// Other configs...
+```bash
+# clone repository
+git clone https://github.com/Tolik9924/react-camp-2025.git
+cd react-code-camp-2025
 
-			// Remove tseslint.configs.recommended and replace with this
-			tseslint.configs.recommendedTypeChecked,
-			// Alternatively, use this for stricter rules
-			tseslint.configs.strictTypeChecked,
-			// Optionally, add this for stylistic rules
-			tseslint.configs.stylisticTypeChecked,
+# Installing dependencies
+npm install
 
-			// Other configs...
-		],
-		languageOptions: {
-			parserOptions: {
-				project: ['./tsconfig.node.json', './tsconfig.app.json'],
-				tsconfigRootDir: import.meta.dirname,
-			},
-			// other options...
-		},
-	},
-]);
+# Launching the development server
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🛠 Доступні скрипти
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x';
-import reactDom from 'eslint-plugin-react-dom';
-
-export default defineConfig([
-	globalIgnores(['dist']),
-	{
-		files: ['**/*.{ts,tsx}'],
-		extends: [
-			// Other configs...
-			// Enable lint rules for React
-			reactX.configs['recommended-typescript'],
-			// Enable lint rules for React DOM
-			reactDom.configs.recommended,
-		],
-		languageOptions: {
-			parserOptions: {
-				project: ['./tsconfig.node.json', './tsconfig.app.json'],
-				tsconfigRootDir: import.meta.dirname,
-			},
-			// other options...
-		},
-	},
-]);
-```
+| Скрипт               | Опис                                                              |
+| -------------------- | ----------------------------------------------------------------- |
+| 🛠 `npm run dev`     | Запускає development сервер з Vite.                               |
+| 🛠 `npm run build`   | Створює production build у папці `dist`.                          |
+| 🔍 `npm run preview` | Перегляд production build локально.                               |
+| 🧹 `npm run lint`    | Запускає ESLint для перевірки коду на помилки.                    |
+| 🎨 `npm run format`  | Форматує код за правилами Prettier.                               |
+| ✅ `npm run ts`      | перевірити синтаксис та типи typescript                           |
+| ✅ `npm run verify`  | Виконує всі перевірки перед коммітом (ESLint + Prettier + тести). |
