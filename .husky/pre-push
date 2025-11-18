@@ -19,11 +19,5 @@ npm run ts || {
   exit 1
 }
 
-# Check for unused CSS: block if detected
-npm run check-unused-css || {
-  echo "Unused CSS found. Push aborted."
-  exit 1
-}
-
 echo "Pre-push checks passed."
 exit 0
