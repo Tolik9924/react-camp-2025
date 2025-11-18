@@ -30,12 +30,12 @@ npm run dev
 
 ## 🛠 Доступні скрипти
 
-| Скрипт               | Опис                                                              |
-| -------------------- | ----------------------------------------------------------------- |
-| 🛠 `npm run dev`     | Запускає development сервер з Vite.                               |
-| 🛠 `npm run build`   | Створює production build у папці `dist`.                          |
-| 🔍 `npm run preview` | Перегляд production build локально.                               |
-| 🧹 `npm run lint`    | Запускає ESLint для перевірки коду на помилки.                    |
-| 🎨 `npm run format`  | Форматує код за правилами Prettier.                               |
-| ✅ `npm run ts`      | перевірити синтаксис та типи typescript                           |
-| ✅ `npm run verify`  | Виконує всі перевірки перед коммітом (ESLint + Prettier + тести). |
+| Скрипт               | Опис                                                                |
+| -------------------- | ------------------------------------------------------------------- |
+| 🛠 `npm run dev`     | Starts the development server with Vite.                            |
+| 🛠 `npm run build`   | Creates a production build in the `dist` folder.                    |
+| 🔍 `npm run preview` | Перегляд production build локально.                                 |
+| 🧹 `npm run lint`    | Runs ESLint to check the code for errors.                           |
+| 🎨 `npm run format`  | Formats the code according to Prettier rules.                       |
+| ✅ `npm run ts`      | Check syntax and typescript types.                                  |
+| ✅ `npm run verify`  | Runs all pre-commit checks (ESLint + Prettier + typescript syntax). |
