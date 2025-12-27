@@ -1,3 +1,4 @@
+/* eslint-disable css-modules/no-unused-class */
 import React from 'react';
 import styles from './Input.module.css';
 
