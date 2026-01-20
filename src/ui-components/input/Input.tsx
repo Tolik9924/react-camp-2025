@@ -2,12 +2,13 @@
 import React from 'react';
 import styles from './Input.module.css';
 
-
 type Size = 'XL' | 'big' | 'medium' | 'small' | 'XS';
 type Theme = 'primary' | 'secondary' | 'success' | 'error';
 
 interface InputProps {
 	value?: string;
+	id?: string;
+	label?: string;
 	type?: string;
 	placeholder?: string;
 	fullWidth?: boolean;
@@ -17,7 +18,20 @@ interface InputProps {
 	onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-const Input = ({ value, type, placeholder, fullWidth, disabled = false, size = 'medium', theme = 'primary', onChange }: InputProps) => {
+/* додати логыки для кнопки " очистити " та іконки (лейбла) */
+
+const Input = ({
+	value,
+	id,
+	label,
+	type,
+	placeholder,
+	fullWidth,
+	disabled = false,
+	size = 'medium',
+	theme = 'primary',
+	onChange,
+}: InputProps) => {
 	let className = styles.input;
 
 	if (size) className += ' ' + styles[size];
@@ -26,7 +40,18 @@ const Input = ({ value, type, placeholder, fullWidth, disabled = false, size = '
 	if (disabled) className += ' ' + styles.disabled;
 
 	return (
-		<input value={value} type={type} placeholder={placeholder} className={className} onChange={onChange}/>
+		<div>
+			{label && <label htmlFor="id"> </label>}
+
+			<input
+				value={value}
+				id={id}
+				type={type}
+				placeholder={placeholder}
+				className={className}
+				onChange={onChange}
+			/>
+		</div>
 	);
 };
 

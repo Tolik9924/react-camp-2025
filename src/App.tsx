@@ -1,11 +1,10 @@
 import './App.css';
-import { Input } from './ui-components/input';
-
+import Input from './ui-components/input/Input.tsx';
 
 const App = () => {
 	return (
 		<div>
-			<Input placeholder="Search" fullWidth />
+			<Input id="Search" type="text" placeholder="Search" theme="primary" fullWidth />
 		</div>
 	);
 };
