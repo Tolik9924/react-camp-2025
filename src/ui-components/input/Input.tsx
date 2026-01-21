@@ -1,6 +1,7 @@
 /* eslint-disable css-modules/no-unused-class */
 import React from 'react';
 import styles from './Input.module.css';
+/* import { classNames } from '@/utils/classnames'; */
 
 type Size = 'XL' | 'big' | 'medium' | 'small' | 'XS';
 type Theme = 'primary' | 'secondary' | 'success' | 'error';
@@ -17,8 +18,6 @@ interface InputProps {
 	theme?: Theme;
 	onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
-
-/* додати логыки для кнопки " очистити " та іконки (лейбла) */
 
 const Input = ({
 	value,
