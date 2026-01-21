@@ -1,12 +1,16 @@
-/* eslint-disable css-modules/no-unused-class */
 import React from 'react';
 import styles from './Input.module.css';
-/* import { classNames } from '@/utils/classnames'; */
+import cn from 'classnames';
+
+
+
+
 
 type Size = 'XL' | 'big' | 'medium' | 'small' | 'XS';
 type Theme = 'primary' | 'secondary' | 'success' | 'error';
 
 interface InputProps {
+
 	value?: string;
 	id?: string;
 	label?: string;
@@ -17,41 +21,46 @@ interface InputProps {
 	size?: Size;
 	theme?: Theme;
 	onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+	
 }
 
-const Input = ({
-	value,
-	id,
-	label,
-	type,
-	placeholder,
-	fullWidth,
-	disabled = false,
-	size = 'medium',
-	theme = 'primary',
-	onChange,
-}: InputProps) => {
-	let className = styles.input;
+const Input = ({ value, id, label, type, placeholder, fullWidth, disabled = false, size = 'medium', theme = 'primary', onChange }: InputProps) => {
 
-	if (size) className += ' ' + styles[size];
-	if (theme) className += ' ' + styles[theme];
-	if (fullWidth) className += ' ' + styles.fullWidth;
-	if (disabled) className += ' ' + styles.disabled;
+   const className = cn(
+
+    styles.input,
+	styles[size],
+	styles[theme],
+  
+   {
+
+    [styles.fullWidth] : fullWidth,
+    [styles.disabled] : disabled
+
+    }
+    );
 
 	return (
-		<div>
-			{label && <label htmlFor="id"> </label>}
+	
+	<div>
+        {
+			label &&(
+				<label htmlFor='id'> </label>			
+			)
+		}
 
-			<input
-				value={value}
-				id={id}
-				type={type}
-				placeholder={placeholder}
-				className={className}
-				onChange={onChange}
-			/>
-		</div>
+        <input
+	    value={value} 
+	    id={id} 
+		type={type} 
+	    placeholder={placeholder} 
+	    className={className} 
+	    onChange={onChange} 
+    	/>
+
+    </div>
 	);
+
 };
 
 export default Input;
